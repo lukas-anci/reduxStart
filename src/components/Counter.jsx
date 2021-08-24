@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { counterActions } from '../store';
 import classes from './Counter.module.css';
 
 const Counter = () => {
@@ -8,17 +9,17 @@ const Counter = () => {
   const dispatch = useDispatch();
 
   const incrementHandler = () => {
-    dispatch({ type: 'UP' });
+    dispatch(counterActions.up()); // grazina {type:'automatiskai sugenertuotas pavadinimas, payload:undefinder'}
   };
   const decrementHandler = () => {
-    dispatch({ type: 'DOWN' });
+    dispatch(counterActions.down());
   };
   const increaseHandler = () => {
-    dispatch({ type: 'UP_BY', amount: 4 });
+    dispatch(counterActions.increase(6));
   };
 
   const toggleCounterHandler = () => {
-    dispatch({ type: 'TOGGLE' });
+    dispatch(counterActions.toggle(4));
   };
 
   return (
