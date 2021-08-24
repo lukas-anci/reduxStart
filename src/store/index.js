@@ -23,6 +23,8 @@ const counterSlice = createSlice({
   },
 });
 
+// authSlice
+
 // reducer fn
 // const counterReducer = (state = initialCounterState, action) => {
 //   switch (action.type) {
@@ -54,6 +56,7 @@ const counterSlice = createSlice({
 // store
 // const store = createStore(counterReducer);
 
+// export store for use
 const store = configureStore({
   reducer: counterSlice.reducer,
 });
