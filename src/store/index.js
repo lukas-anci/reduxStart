@@ -22,14 +22,26 @@ const counterSlice = createSlice({
     },
   },
 });
+const initAuthState = {
+  isAuthenticated: false,
+  user: {
+    email: 'mike@tyson.com',
+    password: 'secret',
+  },
+};
 
 // authSlice
 const authSlice = createSlice({
   name: 'authentication',
-  initialState: { isAuthenticated: false },
+  initialState: initAuthState,
   reducers: {
-    login(state) {
-      state.isAuthenticated = true;
+    login(state, action) {
+      // validate
+      console.log(action.payload);
+      console.log('state', initAuthState);
+      if (initAuthState.user.email === action.payload.email) {
+        state.isAuthenticated = true;
+      }
     },
     logout(state) {
       state.isAuthenticated = false;
@@ -78,5 +90,6 @@ const store = configureStore({
 // console.log(counterSlice.actions); // visi musu aprasyti veiksmai
 export const counterActions = counterSlice.actions;
 
-export const authActions = authSlice.action;
+export const authActions = authSlice.actions;
+
 export default store;

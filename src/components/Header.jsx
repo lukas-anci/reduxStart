@@ -1,19 +1,38 @@
+import { useSelector, useDispatch } from 'react-redux';
+
 import classes from './Header.module.css';
+import { authActions } from './../store/index';
+
+// kai store isAuthenticated = false tai nerodom linku ir button sako login
 
 const Header = () => {
+  const show = useSelector((state) => state.auth.isAuthenticated);
+  const dispatch = useDispatch();
+  const logout = () => {
+    dispatch(authActions.logout());
+  };
+
   return (
     <header className={classes.header}>
       <h1>Redux Auth</h1>
       <nav>
         <ul>
+          {show && (
+            <>
+              <li>
+                <a href="/">My Products</a>
+              </li>
+              <li>
+                <a href="/">My Sales</a>
+              </li>
+            </>
+          )}
           <li>
-            <a href='/'>My Products</a>
-          </li>
-          <li>
-            <a href='/'>My Sales</a>
-          </li>
-          <li>
-            <button>Logout</button>
+            {show ? (
+              <button onClick={logout}>Logout</button>
+            ) : (
+              <button>Login</button>
+            )}
           </li>
         </ul>
       </nav>
