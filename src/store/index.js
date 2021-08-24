@@ -13,6 +13,10 @@ const counterReducer = (state = initialCounterState, action) => {
       return {
         counter: state.counter - 1,
       };
+    case 'UP_BY':
+      return {
+        counter: state.counter + action.amount,
+      };
 
     default:
       return state;
