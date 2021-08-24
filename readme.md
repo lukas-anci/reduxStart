@@ -6,4 +6,8 @@
 4. provide the store in index.js for <App />
 5. use store data useSelector hook
 6. useDipatch hook to make action
-7.
+7. replace redux with @reduxjs/toolkit
+8. npm rm redux
+9. npm install @reduxjs/toolkit
+10. Create Slice with reducers
+11. configureStore output
