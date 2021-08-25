@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { counterActions } from '../store';
+
 import classes from './Counter.module.css';
+import { counterActions } from './../store/counterRedux';
 
 const Counter = () => {
   const counter = useSelector((state) => state.counter.counter); // automatiskai sukuria subscribe

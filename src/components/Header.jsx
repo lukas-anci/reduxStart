@@ -1,7 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 
 import classes from './Header.module.css';
-import { authActions } from './../store/index';
+
+import { authActions } from './../store/authRedux';
 
 // kai store isAuthenticated = false tai nerodom linku ir button sako login
 

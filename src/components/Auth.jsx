@@ -1,7 +1,8 @@
 import classes from './Auth.module.css';
 import { useDispatch } from 'react-redux';
-import { authActions } from '../store';
+
 import { useState } from 'react';
+import { authActions } from './../store/authRedux';
 
 const Auth = () => {
   const [email, setEmail] = useState('');
